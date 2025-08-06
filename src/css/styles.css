@@ -1,1 +1,212 @@
 @import url(./normalize.css);
+
+/* Contenedor principal centrado para el contenido de la página */
+.main-content {
+  width: 100%;
+  max-width: 1200px;         /* Controla el ancho máximo del contenido */
+  margin: 0 auto;            /* Centra el contenido horizontalmente */
+  padding: 0 20px;           /* Pequeño padding interno */
+  box-sizing: border-box;
+}
+
+/* Fondo del body simulando la profundidad del mar */
+body {
+  background: linear-gradient(to bottom, #0077b6, #023e8a, #001d3d); /* Degradado marino */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Línea fija vertical a la izquierda */
+.depth-scale {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: 40px;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Línea blanca vertical */
+.depth-line {
+  position: absolute;
+  top: 80px; /* altura del navbar */
+  bottom: 80px; /* altura del footer */
+  left: 50%;
+  width: 2px;
+  background-color: white;
+}
+
+/* Texto de marcas */
+.depth-marker {
+  position: absolute;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+/* Posicionamiento relativo de las marcas dentro de la línea */
+.depth-marker:nth-child(1) { top: 0%; }
+.depth-marker:nth-child(2) { top: 20%; }
+.depth-marker:nth-child(3) { top: 40%; }
+.depth-marker:nth-child(4) { top: 60%; }
+.depth-marker:nth-child(5) { top: 80%; }
+.depth-marker:nth-child(6) { top: 100%; }
+
+/* Navbar */
+
+.navbar-custom {
+  position: relative;   /* Necesario para que los elementos absolutos (como el video) se posicionen dentro */
+  height: 100px;
+  overflow: hidden;     /* Esconde lo que sobresale, como el video */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.navbar-custom .bg-video {
+  position: absolute;   /* Posiciona el video respecto al contenedor padre (.navbar-custom) */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;    /* Hace que el video se recorte para llenar el espacio sin deformarse */
+  z-index: -1;          /* Lo manda detrás del contenido textual */
+}
+
+.navbar-container {
+  position: relative;
+  display: flex;         /* Usa Flexbox para alinear el contenido */
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 5%;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 25px;      /* Espaciado entre enlaces */
+  text-decoration: none;  /* Quita el subrayado */
+  font-weight: 500;
+  transition: color 0.3s; /* Suaviza el cambio de color al pasar el mouse */
+}
+.nav-links a:hover { color: #00bcd4; }
+.logo {
+  font-size: 28px;        /* Tamaño Fuente */
+  font-weight: 600;       /* Negrita */ 
+}
+
+/* Contactenos */
+
+.contact-section {
+  padding: 60px 20px;     /* Espacio Interno */
+  background: linear-gradient(to bottom, #044c75, #005f73); /*Fondo degradado */ 
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-container {
+  max-width: 600px;       /* El contenido no será más ancho que 600px, para mantenerlo legible */
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;  /*Organiza los campos uno debajo del otro*/
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;   /* Suaviza el efecto de hover */
+}
+
+.contact-form button:hover {
+  background-color: #0194a3;        /* Cambia el color del botón al pasar el mouse */
+}
+
+/* Footer */
+
+.footer-custom {
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.footer-custom .bg-video-footer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-social {
+  margin-top: 15px;                /* Espacio entre el contenido del footer y los íconos sociales */
+}
+.footer-social a {
+  color: #00bcd4;
+  font-size: 22px;
+  margin: 0 10px;
+  transition: transform 0.2s ease; /* Suaviza la animación al escalar */
+}
+
+/* Ajustes de la Opacidad del video */
+
+.navbar-custom .bg-video,
+.footer-custom .bg-video-footer {
+  opacity: 0.6;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 35, 35, 0.2); /* Capa oscura semitransparente: mejora el contraste */
+  z-index: -1;
+}
+
+/* Main para Footer */
+
+main {
+  flex: 1;   /* Asigna el espacio sobrante al Main para que el footer quede abajo */
+}
+
+/* Mantiene el footer abajo */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
