@@ -32,21 +32,11 @@
         </div>
     </header>
 
-    <div class="depth-scale">
-        <div class="depth-line">
-            <div class="depth-marker" style="top: 0%">0m</div>
-            <div class="depth-marker" style="top: 20%">10m</div>
-            <div class="depth-marker" style="top: 40%">20m</div>
-            <div class="depth-marker" style="top: 60%">30m</div>
-            <div class="depth-marker" style="top: 80%">40m</div>
-            <div class="depth-marker" style="top: 100%">50m</div>
-
-        </div>
-    </div>
-
+  
     <main>
+      <div class="main-content">
         <section class="carrousel">
-            <div class="main-content">
+            
 
                 <!-- ✅ Carrusel de imágenes -->
                 <section class="carousel-container">
@@ -82,7 +72,6 @@
                     <div class="image-content"></div>
 
                 </section>
-            </div>
         </section>
 
         <section id="apnea-info" class="apnea-section" >
@@ -93,7 +82,7 @@
                 <ul class="benefits">
                     <div class="benefits-row">
                         <div class="benefit-box">
-                            <h3 class="benefit-title">Mejora la capacidad pulmonar</h3>
+                            <h3 class="benefit-title">Mejora la capacidad pulmonar</h3><br>
                             <div class="image-container">
                                 <img src="./src/public/img/Imagen2.webp" alt="Capacidad" />
                             </div>
@@ -120,19 +109,6 @@
                 </ul>
             </div>
             <canvas id="bubbleCanvas"></canvas>
-        </section>
-
-        <section class="contact-section" id="contacto">
-            <div class="contact-container">
-                <h2>Contáctanos</h2>
-                <p>¿Tienes preguntas sobre el freediving? ¡Escríbenos!</p>
-                <form class="contact-form">
-                    <input type="text" placeholder="Tu nombre" required />
-                    <input type="email" placeholder="Tu correo" required />
-                    <textarea rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    <button type="submit">Enviar mensaje</button>
-                </form>
-            </div>
         </section>
 
          <!-- tienda en linea -->
@@ -236,6 +212,19 @@
             
  <button onclick="mostrarResumenCarrito()" class="btn btn-secondary" id="btnVerCarrito">Ver carrito</button>
         </section>
+                <section class="contact-section" id="contacto">
+            <div class="contact-container">
+                <h2>Contáctanos</h2>
+                <p>¿Tienes preguntas sobre el freediving? ¡Escríbenos!</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Tu nombre" required />
+                    <input type="email" placeholder="Tu correo" required />
+                    <textarea rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+      </div>
     </main>
 
     <footer class="footer-custom">

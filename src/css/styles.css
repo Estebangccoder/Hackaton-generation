@@ -3,7 +3,7 @@
 /* Contenedor principal centrado para el contenido de la página */
 .main-content {
   width: 100%;
-  max-width: 1200px;         /* Controla el ancho máximo del contenido */
+  max-width: 1600px;         /* Controla el ancho máximo del contenido */
   margin: 0 auto;            /* Centra el contenido horizontalmente */
   padding: 0 20px;           /* Pequeño padding interno */
   box-sizing: border-box;
@@ -17,45 +17,6 @@ body {
   background-size: cover;
 }
 
-/* Línea fija vertical a la izquierda */
-.depth-scale {
-  position: fixed;
-  top: 0;
-  left: 20px;
-  width: 40px;
-  height: 100vh;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Línea blanca vertical */
-.depth-line {
-  position: absolute;
-  top: 80px; /* altura del navbar */
-  bottom: 80px; /* altura del footer */
-  left: 50%;
-  width: 2px;
-  background-color: white;
-}
-
-/* Texto de marcas */
-.depth-marker {
-  position: absolute;
-  left: 10px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  transform: translateY(-50%);
-  white-space: nowrap;
-}
-
-/* Posicionamiento relativo de las marcas dentro de la línea */
-.depth-marker:nth-child(1) { top: 0%; }
-.depth-marker:nth-child(2) { top: 20%; }
-.depth-marker:nth-child(3) { top: 40%; }
-.depth-marker:nth-child(4) { top: 60%; }
-.depth-marker:nth-child(5) { top: 80%; }
-.depth-marker:nth-child(6) { top: 100%; }
 
 /* Navbar */
 
@@ -103,7 +64,7 @@ body {
 /* Contenedor principal del carrusel */
 .carousel-container {
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
   background: #000;
@@ -322,11 +283,6 @@ body {
 
 /* Main para Footer */
 
-main {
-  flex: 1;   /* Asigna el espacio sobrante al Main para que el footer quede abajo */
-}
-
-/* Mantiene el footer abajo */
 
 html, body {
   height: 100%;
@@ -339,11 +295,13 @@ html, body {
 
 .apnea-section {
 position: relative;
-padding: 60px 20px 140px;
+padding: 0 20px;
 background: linear-gradient(to bottom, #01203d, #3cc8ff);
 color: rgb(253, 253, 253);
 overflow: hidden;
 font-family: 'Segoe UI', sans-serif;
+margin: 0 auto;
+box-sizing: border-box;
 }
 
 .apnea-section h2 {
@@ -375,7 +333,10 @@ to {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+        max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
     height: 100%;
     pointer-events: auto;
     z-index: 10;
@@ -384,6 +345,10 @@ to {
 .content {
     position: relative;
     z-index: 20;
+        max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 .benefits-row {
     display: flex;
@@ -491,6 +456,7 @@ to {
 #prevBtn, #nextBtn {
     font-size: 3rem;
     font-weight: 500;
+    color: #ffffff;
 }
 
 #nuestra_tienda{
@@ -499,6 +465,17 @@ to {
     text-align: center;
     margin-bottom: 4rem;
     margin-top: 4rem;
+    color: #ffffff;
 
+}
+#btnVerCarrito{
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px; 
+  margin-bottom: 15px;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  background-color: #4c6d90;
 }
 /* -------------------------------------------------------------------------------------------------------------- */
