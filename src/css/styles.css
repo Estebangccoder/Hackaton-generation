@@ -176,7 +176,7 @@ body {
 /* Lado de la imagen */
 .image-content {
   flex: 1 1 50%;
-  background-image: url('/Hackaton-generation/src/public/edson.jpg');
+  background-image: url('../public/img/1.webp');
   background-size: cover;
   background-position: center;
   position: relative; /* necesario para la onda */
@@ -450,3 +450,55 @@ to {
 
 
 /* --------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------Tienda en linea-------------------------------------------------------- */
+
+#photo {
+    border-radius: 5%;
+    width: 20rem;
+  height: 20rem; /* o el alto que tú necesites */
+  object-fit: contain;
+
+}
+
+#card-principal {
+
+    background-color: #fcf9f9;
+    border-color: #fcf9f9;
+}
+
+/* .tiendaEnLinea{
+    display: inline-flex;
+} */
+
+#productosLista{
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+  
+}
+
+#button-nav-tienda{
+    display: flex;
+    align-items: center;
+}
+
+#button_to_Buy{
+    font-size: 1.5rem;
+}
+
+#prevBtn, #nextBtn {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+#nuestra_tienda{
+    align-content: center;
+    margin: 1rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+
+}
+/* -------------------------------------------------------------------------------------------------------------- */
