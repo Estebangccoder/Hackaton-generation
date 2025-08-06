@@ -27,12 +27,15 @@
 
 <div class="depth-scale">
   <div class="depth-line">
-    <div class="depth-marker" style="top: 0%">0m</div>
-    <div class="depth-marker" style="top: 20%">10m</div>
-    <div class="depth-marker" style="top: 40%">20m</div>
-    <div class="depth-marker" style="top: 60%">30m</div>
-    <div class="depth-marker" style="top: 80%">40m</div>
-    <div class="depth-marker" style="top: 100%">50m</div>
+    <div class="depth-marker" style="top: 20%;">40m</div>
+    <div class="depth-marker" style="top: 30%;">60m</div>
+    <div class="depth-marker" style="top: 40%;">80m</div>
+    <div class="depth-marker" style="top: 50%;">100m</div>
+    <div class="depth-marker" style="top: 60%;">120m</div>
+    <div class="depth-marker" style="top: 70%;">140m</div>
+    <div class="depth-marker" style="top: 80%;">160m</div>
+    <div class="depth-marker" style="top: 90%;">180m</div>
+    <div class="depth-marker" style="top: 100%;">200m</div>
   </div>
 </div>
 
@@ -107,6 +110,24 @@
   </footer>
 
   <script type="module" src="./src/js/main.js"></script>
+  <script>
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.body.scrollHeight - window.innerHeight;
+    const depth = Math.round((scrollTop / scrollHeight) * 200); // profundidad actual
+
+    document.querySelectorAll('.depth-marker').forEach(marker => {
+      const markerDepth = parseInt(marker.textContent);
+      if (markerDepth <= depth) {
+        marker.style.opacity = '1';
+        marker.style.color = '#ffffff';
+      } else {
+        marker.style.opacity = '0.3';
+        marker.style.color = '#888';
+      }
+    });
+  });
+</script>
 </body>
 </html>
 
