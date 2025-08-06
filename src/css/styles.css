@@ -1,1 +1,132 @@
 @import url(./normalize.css);
+/*carrusel*/
+/* Contenedor principal del carrusel */
+.carousel-container {
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Línea de imágenes del carrusel */
+.carousel-container {
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+/* panel */
+.submarine-section {
+  display: flex;
+  min-height: 50vh;
+  font-family: sans-serif;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 10px; /* Elimina paddings predeterminados */
+  border-top: 2px solid #00a8a3; /* Borde superior personalizado */
+  border-bottom: 2px solid #00a8a3; /* Borde inferior personalizado */
+  box-sizing: border-box; /* Incluye bordes en el cálculo del tamaño */
+}
+/* Lado del texto */
+.text-content {
+  flex: 1 1 50%;
+  background-color: #00b7b1;
+  color: #fffbea;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.text-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Lado de la imagen */
+.image-content {
+  flex: 1 1 50%;
+  background-image: url('/Hackaton-generation/src/public/edson.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative; /* necesario para la onda */
+  min-height: 50vh; /* asegura que mida lo mismo que el texto */
+}   
+
+/* Forma de onda */
+.image-content::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 600" xmlns="http://www.w3.org/2000/svg"><path d="M100,0 C50,100 50,500 100,600 L0,600 L0,0 Z" fill="white"/></svg>') no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .submarine-section {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .text-content, .image-content {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .image-content::before {
+    display: none; /* quita la onda en móvil */
+  }
+
+  .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+}
