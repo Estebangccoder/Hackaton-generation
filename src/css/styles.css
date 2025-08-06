@@ -1,19 +1,108 @@
 @import url(./normalize.css);
+
+/* Contenedor principal centrado para el contenido de la página */
+.main-content {
+  width: 100%;
+  max-width: 1200px;         /* Controla el ancho máximo del contenido */
+  margin: 0 auto;            /* Centra el contenido horizontalmente */
+  padding: 0 20px;           /* Pequeño padding interno */
+  box-sizing: border-box;
+}
+
+/* Fondo del body simulando la profundidad del mar */
+body {
+  background: linear-gradient(to bottom, #0077b6, #023e8a, #001d3d); /* Degradado marino */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Línea fija vertical a la izquierda */
+.depth-scale {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: 40px;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Línea blanca vertical */
+.depth-line {
+  position: absolute;
+  top: 80px; /* altura del navbar */
+  bottom: 80px; /* altura del footer */
+  left: 50%;
+  width: 2px;
+  background-color: white;
+}
+
+/* Texto de marcas */
+.depth-marker {
+  position: absolute;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+/* Posicionamiento relativo de las marcas dentro de la línea */
+.depth-marker:nth-child(1) { top: 0%; }
+.depth-marker:nth-child(2) { top: 20%; }
+.depth-marker:nth-child(3) { top: 40%; }
+.depth-marker:nth-child(4) { top: 60%; }
+.depth-marker:nth-child(5) { top: 80%; }
+.depth-marker:nth-child(6) { top: 100%; }
+
+/* Navbar */
+
+.navbar-custom {
+  position: relative;   /* Necesario para que los elementos absolutos (como el video) se posicionen dentro */
+  height: 100px;
+  overflow: hidden;     /* Esconde lo que sobresale, como el video */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  min-height: 12rem;
+}
+
+.navbar-custom .bg-video {
+  position: absolute;   /* Posiciona el video respecto al contenedor padre (.navbar-custom) */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;    /* Hace que el video se recorte para llenar el espacio sin deformarse */
+  z-index: -1;          /* Lo manda detrás del contenido textual */
+}
+
+.navbar-container {
+  position: relative;
+  display: flex;         /* Usa Flexbox para alinear el contenido */
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 5%;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 25px;      /* Espaciado entre enlaces */
+  text-decoration: none;  /* Quita el subrayado */
+  font-weight: 500;
+  transition: color 0.3s; /* Suaviza el cambio de color al pasar el mouse */
+}
+.nav-links a:hover { color: #00bcd4; }
+.logo {
+  font-size: 28px;        /* Tamaño Fuente */
+  font-weight: 600;       /* Negrita */ 
+}
+
 /*carrusel*/
 /* Contenedor principal del carrusel */
 .carousel-container {
-  width: 100vw;
-  height: 70vh;
-  overflow: hidden;
-  position: relative;
-  background: #000;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* Línea de imágenes del carrusel */
-.carousel-container {
-  width: 100vw;
+  width: 100%;
   height: 70vh;
   overflow: hidden;
   position: relative;
@@ -131,104 +220,6 @@
   }
 }
 
-/* Contenedor principal centrado para el contenido de la página */
-.main-content {
-  width: 100%;
-  max-width: 1200px;         /* Controla el ancho máximo del contenido */
-  margin: 0 auto;            /* Centra el contenido horizontalmente */
-  padding: 0 20px;           /* Pequeño padding interno */
-  box-sizing: border-box;
-}
-
-/* Fondo del body simulando la profundidad del mar */
-body {
-  background: linear-gradient(to bottom, #0077b6, #023e8a, #001d3d); /* Degradado marino */
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Línea fija vertical a la izquierda */
-.depth-scale {
-  position: fixed;
-  top: 0;
-  left: 20px;
-  width: 40px;
-  height: 100vh;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Línea blanca vertical */
-.depth-line {
-  position: absolute;
-  top: 80px; /* altura del navbar */
-  bottom: 80px; /* altura del footer */
-  left: 50%;
-  width: 2px;
-  background-color: white;
-}
-
-/* Texto de marcas */
-.depth-marker {
-  position: absolute;
-  left: 10px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  transform: translateY(-50%);
-  white-space: nowrap;
-}
-
-/* Posicionamiento relativo de las marcas dentro de la línea */
-.depth-marker:nth-child(1) { top: 0%; }
-.depth-marker:nth-child(2) { top: 20%; }
-.depth-marker:nth-child(3) { top: 40%; }
-.depth-marker:nth-child(4) { top: 60%; }
-.depth-marker:nth-child(5) { top: 80%; }
-.depth-marker:nth-child(6) { top: 100%; }
-
-/* Navbar */
-
-.navbar-custom {
-  position: relative;   /* Necesario para que los elementos absolutos (como el video) se posicionen dentro */
-  height: 100px;
-  overflow: hidden;     /* Esconde lo que sobresale, como el video */
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-}
-
-.navbar-custom .bg-video {
-  position: absolute;   /* Posiciona el video respecto al contenedor padre (.navbar-custom) */
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;    /* Hace que el video se recorte para llenar el espacio sin deformarse */
-  z-index: -1;          /* Lo manda detrás del contenido textual */
-}
-
-.navbar-container {
-  position: relative;
-  display: flex;         /* Usa Flexbox para alinear el contenido */
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 0 5%;
-}
-
-.nav-links a {
-  color: white;
-  margin-left: 25px;      /* Espaciado entre enlaces */
-  text-decoration: none;  /* Quita el subrayado */
-  font-weight: 500;
-  transition: color 0.3s; /* Suaviza el cambio de color al pasar el mouse */
-}
-.nav-links a:hover { color: #00bcd4; }
-.logo {
-  font-size: 28px;        /* Tamaño Fuente */
-  font-weight: 600;       /* Negrita */ 
-}
-
 /* Contactenos */
 
 .contact-section {
@@ -286,6 +277,7 @@ body {
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+  min-height: 12rem;
 }
 
 .footer-custom .bg-video-footer {
